@@ -1,73 +1,91 @@
-# React + TypeScript + Vite
+# 🎨 Frontend Sistema de Cursos - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación frontend desarrollada con React que consume una API segura con autenticación JWT.
 
-Currently, two official plugins are available:
+🔗 Backend del proyecto:
+https://github.com/jara96/api-seguridad-jwt
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Stack Tecnológico
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Context API
+- Fetch API
+- JWT Authentication
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📌 Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Login de usuario
+- Recepción y almacenamiento de JWT
+- Protección de rutas privadas
+- Dashboard dinámico según rol
+- Administración de usuarios (rol ADMIN)
+- Gestión y visualización de cursos
+- Manejo global de autenticación con Context
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🔐 Sistema de Autenticación
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+El flujo funciona de la siguiente manera:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Usuario envía credenciales
+2. Backend valida y genera JWT
+3. Frontend almacena el token
+4. El token se envía en cada request protegida
+5. Rutas privadas verifican autenticación
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🏗️ Arquitectura del Proyecto
+
+- `components/` → Componentes reutilizables
+- `pages/` → Vistas principales
+- `context/` → Manejo global de autenticación
+- `api/` → Capa de conexión con backend
+- `types/` → Definiciones TypeScript
+
+---
+
+## ⚙️ Instalación
+
+1. Clonar repositorio
+2. Instalar dependencias:
+
+```bash
+npm install
+
+Ejecutar servidor de desarrollo:
+
+npm run dev
+
+Aplicación disponible en:
+
+http://localhost:5173
+
+🔗 Configuración Backend
+
+El frontend consume la API en:
+
+http://localhost:8080
+
+Si es necesario cambiar la URL, editar:
+
+src/api/api.ts
+
+Repositorio backend:
+👉 https://github.com/jara96/api-seguridad-jwt
+
+🎯 Objetivo del Proyecto
+
+Proyecto desarrollado como práctica profesional para integrar un frontend moderno con una API segura implementando autenticación JWT y control de roles.
+
+👨‍💻 Autor
+
+Fernando Jara
